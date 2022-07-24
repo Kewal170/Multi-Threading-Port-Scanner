@@ -2,7 +2,7 @@ import socket
 import threading
 import queue
 
-ip_address = '192.168.56.1'
+ip_address = '<ip address>'
 q = queue.Queue()
 
 
