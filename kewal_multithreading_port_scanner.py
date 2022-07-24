@@ -11,16 +11,19 @@ def banner(ip_address): # Banner
 	print("Scanning {}".format(ip_address))
 	print("-"*100)
 
-for i in range(1,1001): # Storing 1000 ports in our queue
+for i in range(1,501): # Storing 500 ports in our queue
 	q.put(i)
 
 def scan(): # Defining scan option
 	while not q.empty():
+		protocolname = 'tcp'
 		port = q.get()
 		with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 			try:
 				s.connect((ip_address,port))
-				print(f"[+] Port {port} is open")
+				SERVICE = socket.getservbyport(port, protocolname)
+				# print("Port: %s => service name: %s" %(port, SERVICE) 
+				print(f"[+] Port {port} :: {SERVICE}")
 			except:
 				pass
 		q.task_done()
