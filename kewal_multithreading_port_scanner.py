@@ -5,7 +5,7 @@ import logging
 from colorama import Fore, Style, init
 
 # Configuration
-IP_ADDRESS = '192.168.137.1'
+IP_ADDRESS = '<--->' # Your IP Address
 PORT_RANGE = range(1, 1001)  # Ports to scan
 NUM_THREADS = 50  # Number of threads to use
 VERBOSE = False  # Disable verbose mode to only show open ports
